@@ -1,0 +1,46 @@
+@import "tailwindcss";
+html,
+body {
+  cursor: none;
+}
+
+/* Core dot */
+#cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: #22c55e;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999999; /* VERY HIGH */
+  box-shadow: 0 0 12px #22c55e;
+}
+
+/* Trailing ring */
+#cursor-ring {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #22c55e;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 999998; /* VERY HIGH */
+  box-shadow:
+    0 0 25px #22c55e,
+    inset 0 0 10px #22c55e;
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    border 0.2s ease;
+}
+
+.cursor-hover {
+  width: 70px !important;
+  height: 70px !important;
+  border: 2px solid #a855f7 !important;
+  box-shadow:
+    0 0 35px #a855f7,
+    inset 0 0 15px #a855f7 !important;
+}
